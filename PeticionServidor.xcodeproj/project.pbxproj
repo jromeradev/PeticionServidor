@@ -12,6 +12,7 @@
 		829CFFF91C222B1500FFE47B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829CFFF71C222B1500FFE47B /* Main.storyboard */; };
 		829CFFFB1C222B1500FFE47B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829CFFFA1C222B1500FFE47B /* Assets.xcassets */; };
 		829CFFFE1C222B1500FFE47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829CFFFC1C222B1500FFE47B /* LaunchScreen.storyboard */; };
+		82DE654D1C2363210016C1F1 /* Comunicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DE654C1C2363210016C1F1 /* Comunicacion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		829CFFFA1C222B1500FFE47B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		829CFFFD1C222B1500FFE47B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		829CFFFF1C222B1500FFE47B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82DE654C1C2363210016C1F1 /* Comunicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comunicacion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				829CFFFA1C222B1500FFE47B /* Assets.xcassets */,
 				829CFFFC1C222B1500FFE47B /* LaunchScreen.storyboard */,
 				829CFFFF1C222B1500FFE47B /* Info.plist */,
+				82DE654C1C2363210016C1F1 /* Comunicacion.swift */,
 			);
 			path = PeticionServidor;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DE654D1C2363210016C1F1 /* Comunicacion.swift in Sources */,
 				829CFFF61C222B1500FFE47B /* ViewController.swift in Sources */,
 				829CFFF41C222B1500FFE47B /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +281,7 @@
 				829C00041C222B1500FFE47B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		829CFFEB1C222B1500FFE47B /* Build configuration list for PBXProject "PeticionServidor" */ = {
 			isa = XCConfigurationList;

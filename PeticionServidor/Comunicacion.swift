@@ -12,10 +12,13 @@ class Comunicacion {
     
     let urlBase:String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:"
     
-    func loadBookInfo(isbn:String)->NSString?{
+    func loadBookInfo(isbn:String)->NSString? {
         let url = NSURL(string:urlBase+isbn)
         let datos:NSData? = NSData(contentsOfURL:url!)
-        let texto:NSString? = NSString(data:datos!, encoding: NSUTF8StringEncoding)
+        var texto:NSString?
+        if (datos != nil){
+            texto = NSString(data:datos!, encoding: NSUTF8StringEncoding)
+        }
         return texto
     }
     

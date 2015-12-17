@@ -33,15 +33,11 @@ class ViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
        
-        do {
-         let data:NSString? = try com.loadBookInfo(isbn.text!)
+        let data:NSString? = com.loadBookInfo(isbn.text!)
         if (data != nil){
             result.text = (data as String?)!
         }
-        }catch let ex as NSException {
-            result.text = ex.callStackSymbols.joinWithSeparator("-")
-        }
-                
+        
         return true
     }
     

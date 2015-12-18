@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController,UITextFieldDelegate {
-
-    var com:Comunicacion = Comunicacion()
+    
+    let urlBase:String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:"
+    
     @IBOutlet weak var result: UITextView!
     @IBOutlet weak var isbn: UITextField!
     
@@ -30,12 +31,28 @@ class ViewController: UIViewController,UITextFieldDelegate {
         result.text=""
     }
 
+    func loadBookInfo(isbn:String)throws->NSString? {
+        let url = NSURL(string:urlBase+isbn)
+        let datos:NSData? = try NSData(contentsOfURL:url!,options: NSDataReadingOptions.DataReadingMappedIfSafe)
+        var texto:NSString?
+        if (datos != nil){
+            texto = NSString(data:datos!, encoding: NSUTF8StringEncoding)
+        }
+        return texto
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-       
-        let data:NSString? = com.loadBookInfo(isbn.text!)
-        if (data != nil){
-            result.text = (data as String?)!
+        do{
+            let data:NSString? = try loadBookInfo(isbn.text!)
+            if (data != nil){
+                result.text = (data as String?)!
+            }
+        } catch let error as NSError {
+            let alerta = UIAlertController(title:"Error acceso URL", message: error.description, preferredStyle:.Alert)
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alerta.addAction(OKAction)
+            self.presentViewController(alerta, animated: true, completion: nil)
         }
         
         return true
